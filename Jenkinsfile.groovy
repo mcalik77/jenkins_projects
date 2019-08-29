@@ -22,6 +22,6 @@ node{
         sh "ssh ec2-user@${ENVIR} sudo pip install -r /home/ec2-user/flask-examples/requirements.txt"
     }
     stage("Run App"){
-        sh "ssh ec2-user@${ENVIR} python  /home/ec2-user/01-hello-world/hello.py"
+        sh "ssh ec2-user@${ENVIR} python   /home/ec2-user/flask-examples/01-hello-world/hello.py"
     }
 }
