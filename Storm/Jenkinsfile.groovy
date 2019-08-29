@@ -6,10 +6,13 @@ node{
     stage("Install git"){
         sh "ssh ec2-user@${ENVIR} sudo yum install git python-pip -y"
     }
-     stage("Remove repo"){
+    stage("Remove repo"){
         sh "ssh  ec2-user@${ENVIR} sudo  rm -rf /home/ec2-user/stormpath-flask-sample"
     }
-     
+    stage("Copy Script"){
+        sh "scp  script.sh ec2-user@${ENVIR}:/home/ec2-user"
+        sh "ssh  script.sh ec2-user@${ENVIR} bash script.sh"
+    }
     stage("Pull Repo"){
         sh "ssh ec2-user@${ENVIR} git clone https://github.com/mcalik77/stormpath-flask-sample.git 2> /dev/null"
     }
