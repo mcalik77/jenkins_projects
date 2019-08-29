@@ -10,7 +10,7 @@ node{
         //sh  "ssh ec2-user@${ENVIR} sudo rm -rf /home/ec2-user/flask-examples"
     }
     stage("Pull Repo"){
-        sh "ssh ec2-user@${ENVIR} git clone https://github.com/anfederico/Flaskex.git"
+        sh "ssh ec2-user@${ENVIR} git clone https://github.com/mcalik77/Flaskex.git"
     }
     stage("Install Requirements"){
         //sh "virtualenv /tmp/venv"
